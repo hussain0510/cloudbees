@@ -17,7 +17,7 @@ jobs:
         run: echo "Pushing Binary to ECR..."
 
       - name: Register build artifacts in Cloudbees platform
-        uses: cloudbees-io-gha/register-build-artifact@v1
+        uses: cloudbees-io-gha/register-build-artifact@v2
         id: go-action
         with:
           name: "GHA App"
@@ -45,7 +45,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Publish test results in Cloudbees platform
-        uses: cloudbees-io-gha/publish-test-results@v1
+        uses: cloudbees-io-gha/publish-test-results@v2
         with:
           test-type: GO
           folder-path: test_reports/*
@@ -71,7 +71,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Trigger deployment
-        uses: cloudbees-io-gha/run-cloudbees-workflow@v1
+        uses: cloudbees-io-gha/run-cloudbees-workflow@v2
         id: deploy
         with :
           cloudbees-pat: ${{ secrets.CBP_PAT }}
