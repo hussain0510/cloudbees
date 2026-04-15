@@ -71,7 +71,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Trigger deployment
-        uses: cloudbees-io/ghactions-run-workflow@v2
+        uses: cloudbees-io-gha/run-cloudbees-workflow@v1
         id: deploy
         with :
           cloudbees-pat: ${{ secrets.CBP_PAT }}
