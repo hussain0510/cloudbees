@@ -48,7 +48,7 @@ jobs:
         uses: cloudbees-io-gha/publish-test-results@v2
         with:
           test-type: GO
-          folder-path: test_reports/*
+          results-path: test_reports/*
           cloudbees-pat: ${{ secrets.CBP_PAT }}
 
       - name: Publish evidence in Cloudbees platform
